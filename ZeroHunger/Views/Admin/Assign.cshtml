@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Assign";
+}
+@model List<ZeroHunger.Db.Models.FoodDonate>
+<h2>Assign</h2>
+
+@foreach (var item in Model)
+{
+<form>
+
+    Res Id:  <input value="@item.ResId" name="Name" class.="form-control" />
+    Food name : <input value="@item.Name" name="Name" class="form-control" />
+    Food quantity : <input value="@item.Quantity" name="Name" class="form-control" />
+    Resturant address : <input value="@item.Resturant.Address" name="Name" class="form-control" />
+    expire date : <input value="@item.ExpireDate" name="Name" class="form-control" />
+    status : <input value="@item.Status" name="Name" class="form-control" />
+
+    assign : 
+    
+    @*@Html.DropDownList("Id", item.Name as SelectList, "name",new {class = "from-control"})*@
+    @*<input value="@item.Name" name="Name" class="form-control" />*@
+
+    @*<select>
+        <option selected disabled>Assign Emp</option>
+        <option>Teacher</option>
+        <option>Student</option>
+        <option>Business</option>
+    </select>*@
+
+    <input type="submit" name="Submit" value="Assign" class="btn btn-success" />
+
+
+    @*
+        <select>
+                            <option selected disabled>Assign Emp</option>
+                            <option>Teacher</option>
+                            <option>Student</option>
+                            <option>Business</option>
+                        </select>
+        Quantity: <input type="text" name="Quantity" class="form-control" />
+        Expire Date: <input type="date" name="ExpireDate" />  <br />
+
+    *@
+
+    @*<tr>
+        <td>@item.ResId</td>
+        <td>@item.Name</td>
+        <td>@item.Quantity</td>
+        <td>@item.Resturant.Address</td>
+        <td>@item.ExpireDate</td>
+        <td>@item.Status</td>*@
+
+</form>
+}

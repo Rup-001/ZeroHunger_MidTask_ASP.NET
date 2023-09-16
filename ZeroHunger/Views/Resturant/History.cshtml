@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "History";
+}
+@model List<ZeroHunger.Db.Models.FoodDonate>
+
+<h2>History</h2>
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </table>
+</div>
+
+

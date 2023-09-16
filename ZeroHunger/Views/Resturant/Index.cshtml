@@ -1,0 +1,26 @@
+﻿@model List<ZeroHunger.Models.FoodDonateDTO>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div>
+    <span class="btn btn-block">@Html.ActionLink("History", "History", "Resturant")</span>
+    <span class="btn btn-block">@Html.ActionLink("Logout", "Logout", "Resturant")</span>
+</div>
+
+<h2>Resturant Index</h2>
+
+
+<form method="post">
+
+    Food Name: <input type="text" name="Name" class="form-control" />
+    Quantity: <input type="text" name="Quantity" class="form-control" />
+    Expire Date: <input type="date" name="ExpireDate" /> <br />
+
+    <input type="submit" name="Submit" value="Add" class="btn btn-success" />
+
+
+
+</form>

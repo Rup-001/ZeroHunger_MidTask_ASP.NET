@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ShowEmployee";
+}
+
+@model List<ZeroHunger.Db.Models.Employee>
+
+
+<h2>ShowEmployee</h2>
+
+<div>
+    <table>
+        <tr>
+            <th>Emp ID</th>
+            <th>Emp Name</th>
+            <th>Emp Email</th>
+        </tr>
+        @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                </tr>
+            }
+    </table>
+</div>
+

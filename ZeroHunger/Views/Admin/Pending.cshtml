@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Pending";
+}
+@model List<ZeroHunger.Db.Models.FoodDonate>
+
+<h2>Pending</h2>
+
+
+<div>
+    <span class="btn btn-block">@Html.ActionLink("Add Employee", "AddEmployee", "Admin") </span>
+    <span class="btn btn-block">@Html.ActionLink("Show Employee", "ShowEmployee", "Admin") </span>
+    <span class="btn btn-block">@Html.ActionLink("Pending Request", "Pending", "Admin") </span>
+    <span class="btn btn-block">@Html.ActionLink("Logout", "Logout", "Admin") </span>
+</div>
+
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Res Id</th>
+            <th>Food name</th>
+            <th>Food quantity</th>
+            <th>Resturant address</th>
+            <th>expire date</th>
+            <th>status</th>
+            <th>assign</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ResId</td>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Resturant.Address</td>
+                <td>@item.ExpireDate</td>
+                <td>@item.Status</td>
+                <td><a href="">@Html.ActionLink("Assign", "Assign", "Admin")</a></td>
+                <td>
+                    <form method="post">
+                        <input type="hidden" name="C_Id" value="@item.Id" />
+                        <select name="EmpId">
+
+                            <option selected disabled>Assign Emp</option>
+                            @foreach (var e in ViewBag.emps)
+                            {
+                                <option value="@e.Id">@e.Name</option>
+                            }
+                        </select>
+                        <input type="submit" name="Submit" value="Add" class="btn btn-success" ;" />
+                    </form>
+                    
+                </td>
+            </tr>
+        }
+    </table>
+    @*<table>
+        <form method="post">
+
+            Food Name: <input type="text" name="Name" class="form-control" />
+            Quantity: <input type="text" name="Quantity" class="form-control" />
+            Expire Date: <input type="date" name="ExpireDate" /> <br />
+
+            <input type="submit" name="Submit" value="Add" class="btn btn-success" />
+
+        </form>
+    </table>*@
+</div>
